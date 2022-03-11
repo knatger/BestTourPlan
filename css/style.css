@@ -682,10 +682,7 @@ template {
 .newsletter {
   position: relative;
   padding: 98px 0 87px 0;
-  background-image: url(../img/newsletter-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: transparent;
 }
 .newsletter::before {
   content: "";
@@ -722,7 +719,7 @@ template {
 
 .subscribe {
   position: relative;
-  width: 355px;
+  width: 350px;
   height: 55px;
   border-radius: 4px;
   overflow: hidden;
@@ -748,6 +745,10 @@ template {
   background-color: #EC1F46;
   color: #FFFFFF;
   cursor: pointer;
+}
+
+.parallax-window {
+  background: transparent;
 }
 
 .reviews {
