@@ -17,6 +17,52 @@ img {
   max-width: 100%;
 }
 
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input {
+  padding: 0 23px;
+  height: 50px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  border: none;
+}
+
+.message {
+  padding: 18px 23px;
+  resize: none;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  border: none;
+}
+
+.button {
+  padding: 18px;
+  min-width: 160px;
+  min-height: 50px;
+  background-color: #EC1F46;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.notscroll {
+  overflow: hidden;
+  height: 100vw;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -970,12 +1016,6 @@ template {
 .footer__contacts-form {
   grid-column: span 2;
 }
-.footer__form {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 .footer__ul {
   padding: 0;
   margin: 0;
@@ -1018,37 +1058,65 @@ template {
 }
 .footer__input {
   margin-bottom: 15px;
-  padding: 0 23px;
-  height: 50px;
-  background-color: #FFFFFF;
-  border-radius: 4px;
-  border: none;
   flex-basis: 48%;
 }
 .footer__message {
   margin-bottom: 23px;
-  padding: 18px 23px;
-  width: 539px;
-  height: 123px;
-  resize: none;
-  background-color: #FFFFFF;
-  border-radius: 4px;
-  border: none;
   flex-basis: 100%;
 }
-.footer__button {
-  padding: 18px;
-  min-width: 160px;
-  min-height: 50px;
-  background-color: #EC1F46;
+.footer__info {
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 4px;
+  color: #E0E0E0;
 }
-.footer__info {
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 143, 223, 0.39);
+  z-index: 100;
+}
+.modal__dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 478px;
+  padding: 33px 88px;
+  background-color: #0A223D;
+  transform: translate(-50%, -50%);
+  color: #FFFFFF;
+  border-radius: 8px;
+  z-index: 101;
+}
+.modal__close {
+  position: absolute;
+  right: 18px;
+  top: 17px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal__title {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.modal__input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.modal__message {
+  width: 100%;
+  min-height: 123px;
+  margin-bottom: 15px;
+}
+.modal__info {
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
