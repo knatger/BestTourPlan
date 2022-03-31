@@ -72,3 +72,78 @@ const Modal = () => {
   );
 };
 Modal();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const forms = document.querySelectorAll("form");
+  telMask(forms);
+  inputsValidate(forms);
+});
+
+const inputsValidate = (forms) => {
+  forms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      formValidate(form);
+    });
+  });
+
+  const formValidate = (form) => {
+    const formReq = form.querySelectorAll(".required");
+    formReq.forEach((input, index) => {
+      formRemoveError(input);
+
+      if (input.classList.contains("text")) {
+        if (input.value === "") {
+          formAddError(input);
+        } 
+      }
+
+      if (input.classList.contains("tel")) {
+        if (telTest(input)) {
+          formAddError(input);
+        } else if (input.value === "") {
+          formAddError(input);
+        }
+      }
+
+      if (input.classList.contains("email")) {
+        // if (emailTest(input)) {
+        //   formAddError(input);
+        // } else
+        if (input.value === "") {
+          formAddError(input);
+        }
+      }
+    });
+  };
+
+  const formAddError = (input) => {
+    input.classList.add("error");
+  };
+
+  const formRemoveError = (input) => {
+    input.classList.remove("error");
+  };
+
+  const emailTest = (input) => {
+    //рег выражение для проверки email
+    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+  };
+
+  // const telTest = (input) => {
+  //   ////рег выражение для проверки tel
+  //   return /^\([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}/.test(input.value);
+  // };
+};
+
+const telMask = (forms) => {
+  forms.forEach((form) => {
+    const telInputs = form.querySelectorAll(".tel");
+    const telMmaskOptions = {
+      mask: "+7(000)000-00-00",
+    };
+    telInputs.forEach((input) => {
+      let mask = IMask(input, telMmaskOptions);
+    });
+  });
+};

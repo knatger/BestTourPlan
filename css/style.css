@@ -63,6 +63,11 @@ img {
   height: 100vw;
 }
 
+.error {
+  box-shadow: 0 0 15px red;
+  color: #EC1F46;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */

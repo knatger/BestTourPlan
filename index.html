@@ -19,7 +19,7 @@
     <header class="navbar navbar--mobile_fixed">
       <div class="container">
         <div class="navbar-top">
-          <a href="#" class="logo">
+          <a href="index.html" class="logo">
             <img
               src="img/horizontal-logo.svg"
               alt="Logo: Best Tour Plan"
@@ -548,13 +548,14 @@
             <form action="send.php" method="POST" class="form footer__form">
               <input
                 type="text"
-                class="input footer__input"
+                class="input footer__input required text"
                 placeholder="Your Full Name*"
                 name="name"
+                minlength="2"
               />
               <input
-                type="text"
-                class="input footer__input"
+                type="tel"
+                class="input footer__input required tel"
                 placeholder="Phone Number*"
                 name="phone"
               />
@@ -584,19 +585,20 @@
         <form action="send.php" method="POST" class="form modal__form">
           <input
             type="text"
-            class="input modal__input"
+            class="input modal__input required text"
             placeholder="Your Full Name*"
             name="name"
+            minlength="2"
           />
           <input
-            type="text"
-            class="input modal__input"
+            type="tel"
+            class="input modal__input required tel"
             placeholder="Phone Number*"
             name="phone"
           />
           <input
-            type="text"
-            class="input modal__input"
+            type="email"
+            class="input modal__input required email"
             placeholder="Email*"
             name="email"
           />
@@ -612,9 +614,10 @@
       <!-- /.modal__dialog -->
     </div>
     <!-- /.modal -->
-    <script src="js/swiper-bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
     <script src="js/parallax.js"></script>
+    <script src="js/imask.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
